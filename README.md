@@ -22,5 +22,13 @@ Then we would consider this an incorrect classification since the first predicte
 
 Then this would be a correct one-off prediction since the 38− 43 bin is directly adjacent to the 48− 53 bin.
 
+The configuration of file as follows:
 
+-age_gender_config.py will beused to when we're training our CNNs
+
+-age_gender_deploy-will be used for deploying after training parts will complete
+
+Checkpoint directory will store all model checkpoint during training So age subdirectory will contain all checkpoints related to the age CNN while the gender subdirectory will store all checkpoints related to the gender CNN.
+
+The build_dataset.py script will be responsible for creating our .lst and .rec files for both the age and gender splits. Once have created our datasets, we can use train.py to train our CNNs. To evaluate the performance of our networks on the testing set, we’l use test_accuracy.py. We’ll then be able to visualize predictions from within the Adience dataset using vis_classification.py. Anytime we want to classify an image outside of Adience, we’ll use test_prediction.py.
 
